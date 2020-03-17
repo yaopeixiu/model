@@ -40,4 +40,15 @@ public class UserService {
         user.setUpdateTime(LocalDateTime.now());
         userMapper.insertSelective(user);
     }
+
+    public List<User> queryByEmail(String email){
+        UserExample example = new UserExample();
+        example.or().andEmailEqualTo(email).andDeleteEqualTo(false);
+        return userMapper.selectByExample(example);
+    }
+
+    public int updateById(User user){
+        user.setUpdateTime(LocalDateTime.now());
+        return userMapper.updateByPrimaryKeySelective(user);
+    }
 }
