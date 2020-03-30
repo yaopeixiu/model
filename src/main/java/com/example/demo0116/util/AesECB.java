@@ -10,6 +10,8 @@ public class AesECB {
 	/**
 	 * 解密
 	 *
+	 * @author lmiky
+	 * @date 2014-2-25
 	 * @param encrypted
 	 * @return
 	 * @throws Exception
@@ -30,6 +32,8 @@ public class AesECB {
 	/**
 	 * 加密
 	 *
+	 * @author lmiky
+	 * @date 2014-2-25
 	 * @param content
 	 * @return
 	 * @throws Exception
@@ -52,6 +56,8 @@ public class AesECB {
 	/**
 	 * 字符串转字节数组
 	 *
+	 * @author lmiky
+	 * @date 2014-2-25
 	 * @param hexString
 	 * @return
 	 */
@@ -68,6 +74,8 @@ public class AesECB {
 	/**
 	 * 字节转16进制数组
 	 *
+	 * @author lmiky
+	 * @date 2014-2-25
 	 * @param buf
 	 * @return
 	 */

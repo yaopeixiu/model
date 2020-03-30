@@ -35,20 +35,20 @@ public class UserService {
         return userMapper.selectByExample(example);
     }
 
+    public List<User> queryByEmail(String email) {
+        UserExample example = new UserExample();
+        example.or().andEmailEqualTo(email).andDeleteEqualTo(false).andIdNotEqualTo(0);
+        return userMapper.selectByExample(example);
+    }
+
+    public int updateById(User user) {
+        user.setUpdateTime(LocalDateTime.now());
+        return userMapper.updateByPrimaryKeySelective(user);
+    }
+
     public void add(User user){
         user.setAddTime(LocalDateTime.now());
         user.setUpdateTime(LocalDateTime.now());
         userMapper.insertSelective(user);
-    }
-
-    public List<User> queryByEmail(String email){
-        UserExample example = new UserExample();
-        example.or().andEmailEqualTo(email).andDeleteEqualTo(false);
-        return userMapper.selectByExample(example);
-    }
-
-    public int updateById(User user){
-        user.setUpdateTime(LocalDateTime.now());
-        return userMapper.updateByPrimaryKeySelective(user);
     }
 }
