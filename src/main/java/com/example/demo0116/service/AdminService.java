@@ -17,9 +17,9 @@ public class AdminService {
     public List<Admin> findAdmin(String username, Integer type) {
         AdminExample example = new AdminExample();
         if (type == 0) {
-            example.or().andUsernameEqualTo(username).andDeletedEqualTo(false);
+            example.or().andUsernameEqualTo(username).andLogdeleteEqualTo(false);
         } else {
-            example.or().andUsernameEqualTo(username).andDeletedEqualTo(false);
+            example.or().andUsernameEqualTo(username).andLogdeleteEqualTo(false);
         }
         return adminMapper.selectByExample(example);
     }
@@ -31,10 +31,6 @@ public class AdminService {
     public int updateById(Admin admin) {
         admin.setUpdateTime(LocalDateTime.now());
         return adminMapper.updateByPrimaryKeySelective(admin);
-    }
-
-    public void deleteById(Integer id) {
-        adminMapper.logicalDeleteByPrimaryKey(id);
     }
 
     public Integer delete(Integer id) {
@@ -53,7 +49,7 @@ public class AdminService {
 
     public List<Admin> all() {
         AdminExample example = new AdminExample();
-        example.or().andDeletedEqualTo(false);
+        example.or().andLogdeleteEqualTo(false);
         return adminMapper.selectByExample(example);
     }
 }

@@ -45,7 +45,7 @@
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
                         connectionURL="jdbc:mysql://localhost:3306/first_database?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC&amp;verifyServerCertificate=false&amp;useSSL=false"
                         userId="root"
-                        password="123456">
+                        password="root">
             <property name="useInformationSchema" value="true"/>
             <property name="remarks" value="true"/>
             <property name="nullCatalogMeansCurrent" value="true"/>
@@ -60,14 +60,23 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.demo0116.dao"
                              targetProject="src/main/java"/>
         <!--表名-->
-        <table tableName="user">
-            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
-        </table>
-        <table tableName="position">
-            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
-        </table>
         <table tableName="admin">
-            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <generatedKey column="admin_id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="cars">
+            <generatedKey column="cars_id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="location">
+            <generatedKey column="location_id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="driver">
+            <generatedKey column="driver_id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="orders">
+            <generatedKey column="order_id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="order_detail">
+            <generatedKey column="order_detail_id" sqlStatement="MySql" identity="true"/>
         </table>
     </context>
 </generatorConfiguration>
