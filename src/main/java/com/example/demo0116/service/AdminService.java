@@ -24,6 +24,12 @@ public class AdminService {
         return adminMapper.selectByExample(example);
     }
 
+    public Admin findByUsername(String username){
+        AdminExample example = new AdminExample();
+        example.or().andUsernameEqualTo(username).andLogdeleteEqualTo(false);
+        return adminMapper.selectOneByExample(example);
+    }
+
     public Admin findAdmin(Integer id) {
         return adminMapper.selectByPrimaryKey(id);
     }
