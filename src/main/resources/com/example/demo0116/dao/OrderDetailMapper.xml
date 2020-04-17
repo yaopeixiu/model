@@ -10,7 +10,7 @@
     <result column="order_id" jdbcType="INTEGER" property="orderId" />
     <result column="driver_id" jdbcType="INTEGER" property="driverId" />
     <result column="driver_name" jdbcType="VARCHAR" property="driverName" />
-    <result column="driver_mobile" jdbcType="INTEGER" property="driverMobile" />
+    <result column="driver_mobile" jdbcType="VARCHAR" property="driverMobile" />
     <result column="car_id" jdbcType="INTEGER" property="carId" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -189,7 +189,7 @@
     insert into order_detail (order_id, driver_id, driver_name, 
       driver_mobile, car_id)
     values (#{orderId,jdbcType=INTEGER}, #{driverId,jdbcType=INTEGER}, #{driverName,jdbcType=VARCHAR}, 
-      #{driverMobile,jdbcType=INTEGER}, #{carId,jdbcType=INTEGER})
+      #{driverMobile,jdbcType=VARCHAR}, #{carId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.example.demo0116.domain.OrderDetail">
     <!--
@@ -228,7 +228,7 @@
         #{driverName,jdbcType=VARCHAR},
       </if>
       <if test="driverMobile != null">
-        #{driverMobile,jdbcType=INTEGER},
+        #{driverMobile,jdbcType=VARCHAR},
       </if>
       <if test="carId != null">
         #{carId,jdbcType=INTEGER},
@@ -265,7 +265,7 @@
         driver_name = #{record.driverName,jdbcType=VARCHAR},
       </if>
       <if test="record.driverMobile != null">
-        driver_mobile = #{record.driverMobile,jdbcType=INTEGER},
+        driver_mobile = #{record.driverMobile,jdbcType=VARCHAR},
       </if>
       <if test="record.carId != null">
         car_id = #{record.carId,jdbcType=INTEGER},
@@ -285,7 +285,7 @@
       order_id = #{record.orderId,jdbcType=INTEGER},
       driver_id = #{record.driverId,jdbcType=INTEGER},
       driver_name = #{record.driverName,jdbcType=VARCHAR},
-      driver_mobile = #{record.driverMobile,jdbcType=INTEGER},
+      driver_mobile = #{record.driverMobile,jdbcType=VARCHAR},
       car_id = #{record.carId,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -308,7 +308,7 @@
         driver_name = #{driverName,jdbcType=VARCHAR},
       </if>
       <if test="driverMobile != null">
-        driver_mobile = #{driverMobile,jdbcType=INTEGER},
+        driver_mobile = #{driverMobile,jdbcType=VARCHAR},
       </if>
       <if test="carId != null">
         car_id = #{carId,jdbcType=INTEGER},
@@ -325,7 +325,7 @@
     set order_id = #{orderId,jdbcType=INTEGER},
       driver_id = #{driverId,jdbcType=INTEGER},
       driver_name = #{driverName,jdbcType=VARCHAR},
-      driver_mobile = #{driverMobile,jdbcType=INTEGER},
+      driver_mobile = #{driverMobile,jdbcType=VARCHAR},
       car_id = #{carId,jdbcType=INTEGER}
     where order_detail_id = #{orderDetailId,jdbcType=INTEGER}
   </update>

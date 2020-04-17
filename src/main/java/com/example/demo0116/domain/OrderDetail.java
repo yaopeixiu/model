@@ -47,7 +47,7 @@ public class OrderDetail {
      *
      * @mbg.generated
      */
-    private Integer driverMobile;
+    private String driverMobile;
 
     /**
      *
@@ -162,7 +162,7 @@ public class OrderDetail {
      *
      * @mbg.generated
      */
-    public Integer getDriverMobile() {
+    public String getDriverMobile() {
         return driverMobile;
     }
 
@@ -174,7 +174,7 @@ public class OrderDetail {
      *
      * @mbg.generated
      */
-    public void setDriverMobile(Integer driverMobile) {
+    public void setDriverMobile(String driverMobile) {
         this.driverMobile = driverMobile;
     }
 
@@ -280,7 +280,7 @@ public class OrderDetail {
         orderId("order_id", "orderId", "INTEGER", false),
         driverId("driver_id", "driverId", "INTEGER", false),
         driverName("driver_name", "driverName", "VARCHAR", false),
-        driverMobile("driver_mobile", "driverMobile", "INTEGER", false),
+        driverMobile("driver_mobile", "driverMobile", "VARCHAR", false),
         carId("car_id", "carId", "INTEGER", false);
 
         /**

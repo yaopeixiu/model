@@ -786,7 +786,7 @@ public class OrderDetailExample {
             return (Criteria) this;
         }
 
-        public Criteria andDriverMobileEqualTo(Integer value) {
+        public Criteria andDriverMobileEqualTo(String value) {
             addCriterion("driver_mobile =", value, "driverMobile");
             return (Criteria) this;
         }
@@ -802,7 +802,7 @@ public class OrderDetailExample {
             return (Criteria) this;
         }
 
-        public Criteria andDriverMobileNotEqualTo(Integer value) {
+        public Criteria andDriverMobileNotEqualTo(String value) {
             addCriterion("driver_mobile <>", value, "driverMobile");
             return (Criteria) this;
         }
@@ -818,7 +818,7 @@ public class OrderDetailExample {
             return (Criteria) this;
         }
 
-        public Criteria andDriverMobileGreaterThan(Integer value) {
+        public Criteria andDriverMobileGreaterThan(String value) {
             addCriterion("driver_mobile >", value, "driverMobile");
             return (Criteria) this;
         }
@@ -834,7 +834,7 @@ public class OrderDetailExample {
             return (Criteria) this;
         }
 
-        public Criteria andDriverMobileGreaterThanOrEqualTo(Integer value) {
+        public Criteria andDriverMobileGreaterThanOrEqualTo(String value) {
             addCriterion("driver_mobile >=", value, "driverMobile");
             return (Criteria) this;
         }
@@ -850,7 +850,7 @@ public class OrderDetailExample {
             return (Criteria) this;
         }
 
-        public Criteria andDriverMobileLessThan(Integer value) {
+        public Criteria andDriverMobileLessThan(String value) {
             addCriterion("driver_mobile <", value, "driverMobile");
             return (Criteria) this;
         }
@@ -866,7 +866,7 @@ public class OrderDetailExample {
             return (Criteria) this;
         }
 
-        public Criteria andDriverMobileLessThanOrEqualTo(Integer value) {
+        public Criteria andDriverMobileLessThanOrEqualTo(String value) {
             addCriterion("driver_mobile <=", value, "driverMobile");
             return (Criteria) this;
         }
@@ -882,22 +882,32 @@ public class OrderDetailExample {
             return (Criteria) this;
         }
 
-        public Criteria andDriverMobileIn(List<Integer> values) {
+        public Criteria andDriverMobileLike(String value) {
+            addCriterion("driver_mobile like", value, "driverMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andDriverMobileNotLike(String value) {
+            addCriterion("driver_mobile not like", value, "driverMobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andDriverMobileIn(List<String> values) {
             addCriterion("driver_mobile in", values, "driverMobile");
             return (Criteria) this;
         }
 
-        public Criteria andDriverMobileNotIn(List<Integer> values) {
+        public Criteria andDriverMobileNotIn(List<String> values) {
             addCriterion("driver_mobile not in", values, "driverMobile");
             return (Criteria) this;
         }
 
-        public Criteria andDriverMobileBetween(Integer value1, Integer value2) {
+        public Criteria andDriverMobileBetween(String value1, String value2) {
             addCriterion("driver_mobile between", value1, value2, "driverMobile");
             return (Criteria) this;
         }
 
-        public Criteria andDriverMobileNotBetween(Integer value1, Integer value2) {
+        public Criteria andDriverMobileNotBetween(String value1, String value2) {
             addCriterion("driver_mobile not between", value1, value2, "driverMobile");
             return (Criteria) this;
         }

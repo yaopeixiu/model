@@ -21,7 +21,7 @@ public class Orders {
      *
      * @mbg.generated
      */
-    private Integer mobile;
+    private String mobile;
 
     /**
      *
@@ -100,7 +100,7 @@ public class Orders {
      *
      * @mbg.generated
      */
-    public Integer getMobile() {
+    public String getMobile() {
         return mobile;
     }
 
@@ -112,7 +112,7 @@ public class Orders {
      *
      * @mbg.generated
      */
-    public void setMobile(Integer mobile) {
+    public void setMobile(String mobile) {
         this.mobile = mobile;
     }
 
@@ -314,7 +314,7 @@ public class Orders {
      */
     public enum Column {
         orderId("order_id", "orderId", "INTEGER", false),
-        mobile("mobile", "mobile", "INTEGER", false),
+        mobile("mobile", "mobile", "VARCHAR", false),
         address("address", "address", "VARCHAR", false),
         type("type", "type", "BIT", true),
         updateTime("update_time", "updateTime", "TIMESTAMP", false),

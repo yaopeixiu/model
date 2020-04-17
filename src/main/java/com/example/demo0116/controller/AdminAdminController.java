@@ -56,4 +56,25 @@ public class AdminAdminController {
         }
         return null;
     }
+
+    /**
+     * 管理员删除
+     * @param adminId
+     * @return
+     */
+    @PostMapping("deleteAdmin")
+    public int deleteAdmin(Integer adminId){
+        Admin admin = adminService.findById(adminId);
+        admin.setLogdelete(true);
+        return adminService.updateById(admin);
+    }
+
+    @PostMapping("updateAdmin")
+    public Object updateAdmin(@RequestBody Admin admin){
+        if(adminService.updateById(admin) == 0){
+            return ResponseUtil.fail(ADMIN_ALTER_NOT_ALLOWED, "数据更新失败");
+        }else {
+            return ResponseUtil.ok();
+        }
+    }
 }

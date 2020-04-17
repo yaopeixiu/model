@@ -399,7 +399,7 @@ public class OrdersExample {
             return (Criteria) this;
         }
 
-        public Criteria andMobileEqualTo(Integer value) {
+        public Criteria andMobileEqualTo(String value) {
             addCriterion("mobile =", value, "mobile");
             return (Criteria) this;
         }
@@ -415,7 +415,7 @@ public class OrdersExample {
             return (Criteria) this;
         }
 
-        public Criteria andMobileNotEqualTo(Integer value) {
+        public Criteria andMobileNotEqualTo(String value) {
             addCriterion("mobile <>", value, "mobile");
             return (Criteria) this;
         }
@@ -431,7 +431,7 @@ public class OrdersExample {
             return (Criteria) this;
         }
 
-        public Criteria andMobileGreaterThan(Integer value) {
+        public Criteria andMobileGreaterThan(String value) {
             addCriterion("mobile >", value, "mobile");
             return (Criteria) this;
         }
@@ -447,7 +447,7 @@ public class OrdersExample {
             return (Criteria) this;
         }
 
-        public Criteria andMobileGreaterThanOrEqualTo(Integer value) {
+        public Criteria andMobileGreaterThanOrEqualTo(String value) {
             addCriterion("mobile >=", value, "mobile");
             return (Criteria) this;
         }
@@ -463,7 +463,7 @@ public class OrdersExample {
             return (Criteria) this;
         }
 
-        public Criteria andMobileLessThan(Integer value) {
+        public Criteria andMobileLessThan(String value) {
             addCriterion("mobile <", value, "mobile");
             return (Criteria) this;
         }
@@ -479,7 +479,7 @@ public class OrdersExample {
             return (Criteria) this;
         }
 
-        public Criteria andMobileLessThanOrEqualTo(Integer value) {
+        public Criteria andMobileLessThanOrEqualTo(String value) {
             addCriterion("mobile <=", value, "mobile");
             return (Criteria) this;
         }
@@ -495,22 +495,32 @@ public class OrdersExample {
             return (Criteria) this;
         }
 
-        public Criteria andMobileIn(List<Integer> values) {
+        public Criteria andMobileLike(String value) {
+            addCriterion("mobile like", value, "mobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andMobileNotLike(String value) {
+            addCriterion("mobile not like", value, "mobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andMobileIn(List<String> values) {
             addCriterion("mobile in", values, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileNotIn(List<Integer> values) {
+        public Criteria andMobileNotIn(List<String> values) {
             addCriterion("mobile not in", values, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileBetween(Integer value1, Integer value2) {
+        public Criteria andMobileBetween(String value1, String value2) {
             addCriterion("mobile between", value1, value2, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileNotBetween(Integer value1, Integer value2) {
+        public Criteria andMobileNotBetween(String value1, String value2) {
             addCriterion("mobile not between", value1, value2, "mobile");
             return (Criteria) this;
         }
