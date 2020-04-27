@@ -43,6 +43,10 @@ public class OrderService {
         return orderDetailMapper.selectOneByExample(example);
     }
 
+    public int updateDetail(OrderDetail orderDetail){
+        return orderDetailMapper.updateByPrimaryKeySelective(orderDetail);
+    }
+
     @Transactional
     public int addOrderDetail(OrderDetail orderDetail){
         return orderDetailMapper.insertSelective(orderDetail);
@@ -62,5 +66,9 @@ public class OrderService {
 
         PageHelper.startPage(page, limit);
         return ordersMapper.selectByExample(example);
+    }
+
+    public Orders findOrderById(Integer id){
+        return ordersMapper.selectByPrimaryKey(id);
     }
 }
