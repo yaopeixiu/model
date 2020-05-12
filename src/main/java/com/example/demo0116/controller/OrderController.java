@@ -32,12 +32,15 @@ public class OrderController {
 
     @PostMapping("OrdersList")
     @CrossOrigin(maxAge = 3600)
-    public Object findOrders(String address,
+    public Object findOrders(@RequestBody String body,
                              @RequestParam(defaultValue = "1") Integer page,
                              @RequestParam(defaultValue = "10") Integer limit,
                              @Sort @RequestParam(defaultValue = "add_time") String sort,
                              @Order @RequestParam(defaultValue = "asc") String order){
-        List<Orders> ordersList = orderService.findOrders(address, page, limit, sort, order);
+        String address = JacksonUtil.parseString(body, "address");
+        String mobile = JacksonUtil.parseString(body, "mobile");
+        String name = JacksonUtil.parseString(body, "name");
+        List<Orders> ordersList = orderService.findOrders(address, mobile, name, page, limit, sort, order);
         List resultList = new ArrayList();
         for(Orders o : ordersList){
             Map<String, Object> data = new HashMap<>();

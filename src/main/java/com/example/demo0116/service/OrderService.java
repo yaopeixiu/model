@@ -52,13 +52,22 @@ public class OrderService {
         return orderDetailMapper.insertSelective(orderDetail);
     }
 
-    public List<Orders> findOrders(String address, Integer page, Integer limit, String sort, String order){
+    public List<Orders> findOrders(String address, String mobile, String name, Integer page, Integer limit, String sort, String order){
         OrdersExample example = new OrdersExample();
         OrdersExample.Criteria criteria = example.createCriteria();
 
-        if (address != null){
+        if (!address.equals("null")){
             criteria.andAddressLike("%" + address +"%");
         }
+
+        if (!mobile.equals("null")){
+            criteria.andMobileEqualTo(mobile);
+        }
+
+        if (!name.equals("null")){
+            criteria.andNameEqualTo(name);
+        }
+
         criteria.andLogdeleteEqualTo(false);
         if (!StringUtils.isEmpty(sort) && !StringUtils.isEmpty(order)) {
             example.setOrderByClause(sort + " " + order);
